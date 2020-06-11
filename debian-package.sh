@@ -3,12 +3,14 @@ D="$(dirname "$0")"
 D="$(cd "${D}" && pwd)"
 DD="$(dirname "${D}")"
 
+. /etc/lsb-release
+
 set -e
 
 # Following this: http://www.sj-vs.net/creating-a-simple-debian-deb-package-based-on-a-directory-structure/
 
 VERSION_NUM="0.9.2"
-VERSION_DETAIL="0dp01~focal1"
+VERSION_DETAIL="0dp02~${DISTRIB_CODENAME}1"
 VERSION="v$VERSION_NUM"
 #URL="https://github.com/ActivityWatch/activitywatch/releases/download/${VERSION}/activitywatch-${VERSION}-linux-x86_64.zip"
 URL="${DD}/activitywatch-${VERSION}-linux-x86_64.zip"

@@ -9,7 +9,7 @@ set -e
 
 # Following this: http://www.sj-vs.net/creating-a-simple-debian-deb-package-based-on-a-directory-structure/
 
-VERSION_NUM="0.9.2"
+VERSION_NUM="0.10.0"
 VERSION_DETAIL="0dp02~${DISTRIB_CODENAME}1"
 VERSION="v$VERSION_NUM"
 #URL="https://github.com/ActivityWatch/activitywatch/releases/download/${VERSION}/activitywatch-${VERSION}-linux-x86_64.zip"

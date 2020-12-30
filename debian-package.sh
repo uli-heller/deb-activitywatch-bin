@@ -10,7 +10,7 @@ set -e
 # Following this: http://www.sj-vs.net/creating-a-simple-debian-deb-package-based-on-a-directory-structure/
 
 VERSION_NUM="0.10.0"
-VERSION_DETAIL="0dp02~${DISTRIB_CODENAME}1"
+VERSION_DETAIL="0dp03~${DISTRIB_CODENAME}1"
 VERSION="v$VERSION_NUM"
 #URL="https://github.com/ActivityWatch/activitywatch/releases/download/${VERSION}/activitywatch-${VERSION}-linux-x86_64.zip"
 URL="${DD}/activitywatch-${VERSION}-linux-x86_64.zip"
@@ -47,7 +47,10 @@ sudo chown -R root:root $PKGDIR
 
 #setup autostart file
 sudo sed -i 's!Exec=aw-qt!Exec=/opt/activitywatch/aw-qt!' $PKGDIR/opt/activitywatch/aw-qt.desktop
+(
+    echo "X-GNOME-Autostart-Delay=5"
+    echo "X-GNOME-UsesNotifications=true"
+)|sudo tee -a $PKGDIR/opt/activitywatch/aw-qt.desktop >/dev/null
 sudo cp $PKGDIR/opt/activitywatch/aw-qt.desktop $PKGDIR/etc/xdg/autostart
 
 dpkg-deb --build $PKGDIR "${DD}/${ARCHIVE}"
-

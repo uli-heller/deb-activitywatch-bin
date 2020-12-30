@@ -4,13 +4,14 @@ ActivityWatch
 Quellen
 -------
 
-* [activitywatch-v0.9.2-linux-x86-64.zip](https://github.com/ActivityWatch/activitywatch/releases)
+* [activitywatch-v0.10.0-linux-x86-64.zip](https://github.com/ActivityWatch/activitywatch/releases)
 * [deb-activitywatch-bin-master](https://github.com/ActivityWatch/deb-activitywatch-bin)
+* Mein Fork: [deb-activitywatch-bin-master](https://github.com/uli-heller/deb-activitywatch-bin)
 
 Ablauf
 ------
 
-1. ZIP-Datei herunterladen: [activitywatch-v0.9.2-linux-x86-64.zip](https://github.com/ActivityWatch/activitywatch/releases/activitywatch-v0.9.2-linux-x86-64.zip)
+1. ZIP-Datei herunterladen: [activitywatch-v0.10.0-linux-x86-64.zip](https://github.com/ActivityWatch/activitywatch/releases/activitywatch-v0.10.0-linux-x86-64.zip)
 2. DEB-Paketierungsprojekt herunterladen
 3. Paketierungsprojekt auspacken
 4. Skript anpassen - siehe "Änderungen"
@@ -20,7 +21,7 @@ Ablauf
 ----------
 
 ```diff
-buntu@ubuntu-2004-build:~/build/activitywatch$ diff -u deb-activitywatch-bin-master/debian-package.sh activitywatch-0.9.2/debian-package.sh
+ubuntu@ubuntu-2004-build:~/build/activitywatch$ diff -u deb-activitywatch-bin-master/debian-package.sh activitywatch-0.9.2/debian-package.sh
 --- deb-activitywatch-bin-master/debian-package.sh	2020-05-16 18:52:36.000000000 +0200
 +++ activitywatch-0.9.2/debian-package.sh	2020-06-11 09:01:42.218889411 +0200
 @@ -1,13 +1,19 @@

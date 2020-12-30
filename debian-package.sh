@@ -46,7 +46,7 @@ jdupes -L -r -S -Xsize-:1K $PKGDIR/opt/
 sudo chown -R root:root $PKGDIR
 
 #setup autostart file
-sudo sed -i 's!Exec=aw-qt!Exec=/opt/activitywatch/aw-qt!' $PKGDIR/opt/activitywatch/aw-qt.desktop
+sudo sed -i -e 's!Exec=aw-qt!Exec=/opt/activitywatch/aw-qt!' -e "/^\s*$/d" $PKGDIR/opt/activitywatch/aw-qt.desktop
 (
     echo "X-GNOME-Autostart-Delay=5"
     echo "X-GNOME-UsesNotifications=true"
